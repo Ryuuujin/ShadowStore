@@ -1,0 +1,700 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #4b1b87, #2e1355, #1b1b87); /* Gradient warna ungu dan biru */
+  background-size: 400% 400%; /* Membuat gradient lebih dinamis */
+  animation: gradientAnimation 10s ease infinite; /* Animasi bergerak */
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #2e1355, #4b1b87);
+}
+
+.header .logo img {
+  width: 50px;
+  border-radius: 15px;
+}
+
+.header .language {
+  display: flex;
+  align-items: center;
+}
+
+.header .menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.header .nav-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Sidebar starts off-screen */
+  width: 300px;
+  height: 100%;
+  background-color: #4b1b87;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: right 0.3s ease; /* Smooth slide-in effect */
+}
+
+.header .nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.header .nav-menu ul li {
+  margin: 20px 0;
+}
+
+.header .nav-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header .nav-menu ul li a:hover {
+  color: #ffb3b3;
+}
+
+.header .nav-menu.active {
+  right: 0; /* Sidebar slides into view */
+}
+
+/* Close Button Styling */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  display: none; /* Default: hidden */
+}
+
+/* Show the close button when sidebar is active */
+.nav-menu.active .close-btn {
+  display: block;
+}
+
+/* Banner Styling */
+.banner {
+  text-align: center;
+  padding: 50px;
+  background-color: #240946;
+  color: white;
+}
+
+.banner-content p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Flash Sale Styling */
+.flash-sale {
+  text-align: center;
+  padding: 20px;
+}
+
+.flash-sale h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+}
+
+/* Popular Products */
+.popular {
+  text-align: center;
+  padding: 20px;
+}
+
+.popular .product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.popular .product-card {
+  padding: 10px;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Game Grid Styling */
+.game-grid {
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.grid-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Footer */
+.footer .wave {
+  height: 100px;
+  background: url('wave-placeholder.png') no-repeat center;
+  background-size: cover;
+}
+
+/* Responsive Design */
+.menu-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .header .nav-menu {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  .header .nav-menu {
+    display: none;
+  }
+}
+
+/* Animasi untuk membuat gradient bergerak */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Product Grid Styling */
+
+
+/* Product Card Styling */
+.product-card {
+  position: relative;
+  width: 120%; /* Lebar penuh pada layar mobile */
+  max-width: 320px; /* Maksimal lebar untuk tampilan mobile */
+  margin: 10px auto; /* Pusatkan elemen di tengah */
+  border-radius: 12px; /* Sudut melengkung */
+  overflow: hidden; /* Potong elemen yang keluar */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+  width: 100%; /* Lebar penuh */
+  height: 150px; /* Sesuaikan tinggi untuk mobile */
+  object-fit: cover; /* Pastikan gambar proporsional */
+}
+
+.product-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #fbd535, #fbc505); /* Gradasi kuning */
+  color: black;
+  padding: 8px 12px; /* Spasi lebih kecil untuk mobile */
+  display: flex;
+  justify-content: space-between; /* Teks rata kiri-kanan */
+  align-items: center;
+}
+
+.game-title {
+  font-size: 14px; /* Ukuran teks lebih kecil */
+  font-weight: bold;
+}
+
+.game-developer {
+  font-size: 12px; /* Ukuran teks lebih kecil */
+  font-weight: lighter;
+  text-align: right;
+}
+
+/* Tambahkan gaya responsif jika dibutuhkan */
+@media (max-width: 480px) {
+  .product-card {
+    max-width: 280px; /* Lebar maksimal untuk layar kecil */
+  }
+
+  .product-card img {
+    height: 120px; /* Kurangi tinggi untuk layar kecil */
+  }
+
+  .product-info {
+    padding: 6px 10px; /* Kurangi padding */
+  }
+
+  .game-title, .game-developer {
+    font-size: 12px; /* Kurangi ukuran font */
+  }
+}
+
+
+.product-card p {
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Hover Effect */
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Carousel Container */
+.carousel {
+  width: 100%; /* Tinggi fleksibel, sekitar 30% dari viewport */
+  max-height: 400px; /* Batas maksimal tinggi */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Carousel Images Wrapper */
+.carousel-images {
+  display: flex;
+  animation: slide 10s infinite;
+  position: relative; /* Tambahkan ini agar z-index bekerja */
+  z-index: 0; /* Pastikan ini di belakang elemen lain */
+}
+
+/* Individual Images */
+.carousel-images img {
+  width: 100%; /* Lebar penuh */
+  height: 100%; /* Sesuaikan tinggi */
+  object-fit: cover; /* Potong gambar agar proporsional */
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%; /* Initially hidden */
+  width: 250px;
+  height: 100vh;
+  background: #444;
+  color: #fff;
+  z-index: 999; /* Sidebar tetap di atas elemen lainnya */
+  transition: right 0.3s ease-in-out;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: -3px 0 5px rgba(0, 0, 0, 0.5);
+}
+/* Tampilkan Sidebar */
+.sidebar.open {
+  right: 0; /* Muncul dari kanan */
+}
+
+/* Banner Styling */
+.carousel {
+  position: relative; /* Pastikan tidak dipengaruhi oleh sidebar */
+  z-index: 1; /* Di bawah sidebar */
+}
+  
+/* Sidebar Styling */
+/* Sidebar Styling */
+.nav-menu {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Sidebar starts off-screen */
+  width: 300px;
+  height: 100vh;
+  background: #4b1b87;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Items di bagian atas */
+  align-items: flex-start;
+  padding: 80px;
+  padding-bottom: 420px;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Pastikan sidebar di atas elemen lain */
+}
+
+/* Sidebar Logo Styling */
+.nav-menu .sidebar-logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nav-menu .sidebar-logo img {
+  width: 80px; /* Sesuaikan ukuran logo */
+  border-radius: 15px;
+}
+
+/* Menata item di sidebar agar rata kiri dan berjajar vertikal */
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling untuk sidebar items */
+.nav-menu ul li {
+  margin: 10px 0;
+}
+
+.nav-menu ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center; /* Memastikan teks dan gambar sejajar vertikal */
+  padding: 10px;
+}
+
+.nav-menu ul li a img {
+  width: 20px; /* Ukuran logo (icon) */
+  height: 20px; /* Ukuran logo (icon) */
+  margin-right: 10px; /* Memberi jarak antara logo dan teks */
+}
+
+.nav-menu ul li a:hover {
+  background-color: #ffb3b3;
+  border-radius: 5px;
+}
+
+
+
+/* Banner Styling */
+.carousel {
+  position: relative; /* Tidak mengganggu elemen lain */
+  z-index: 1; /* Letakkan di bawah sidebar */
+}
+
+/* Game Grid Section */
+.game-grid {
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(to bottom, #1b1b87, #2e1355); /* Gradien warna */
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons Styling */
+.game-grid button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff7b00; /* Warna oranye */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.game-grid button:hover {
+  background-color: #ff9b42; /* Warna lebih terang saat hover */
+  transform: scale(1.05); /* Sedikit membesar saat hover */
+}
+
+/* Grid Container Styling */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual Grid Item */
+.grid-item {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: scale(1.05); /* Sedikit membesar saat hover */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+.grid-item img:hover {
+  transform: scale(1.1); /* Zoom-in pada gambar saat hover */
+}
+
+/* General Styling */
+.product-section {
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.product-section h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #d8d8d8;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px; /* Gap antar produk default diperbesar */
+  padding: 10px;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(to bottom, #444, #111);
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.product-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+
+
+.game-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.game-developer {
+  font-size: 12px;
+  text-align: right;
+  font-weight: lighter;
+  margin-top: 4px;
+}
+
+/* Mobile-specific Styling */
+@media (max-width: 768px) {
+  .product-section {
+    padding: 10px; /* Kurangi padding untuk layar kecil */
+  }
+
+  
+
+  .product-card img {
+    height: 100px; /* Sesuaikan tinggi gambar untuk mobile */
+  }
+
+  .product-info {
+    padding: 8px; /* Kurangi padding untuk info produk */
+  }
+
+  .game-title {
+    font-size: 13px; /* Sesuaikan ukuran teks judul */
+  }
+
+  .game-developer {
+    font-size: 11px; /* Sesuaikan ukuran teks developer */
+  }
+}
+
+/* Dropdown Container */
+.language-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Button Styling */
+#language-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 15px;
+  background-color: #f9f9f9;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  z-index: 9999;
+}
+
+#language-btn .flag-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+#language-btn .arrow-icon {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Dropdown List Sliding Up */
+.language-list {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Show dropdown */
+.language-list.active {
+  transform: translateY(0); /* Slide up into view */
+}
+
+/* Language Item Styling */
+.language-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.language-item:hover {
+  background-color: #f9f9f9;
+}
+
+.language-item .flag-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.language-item span {
+  font-size: 16px;
+  color: #333;
+}
+
+.hidden {
+  display: none; /* Default: hide dropdown */
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;  /* Mulai dengan opacity 0 untuk efek fade-in */
+  transition: opacity 0.3s ease; /* Untuk efek fade-out */
+  color: black;
+}
+
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.5s forwards; /* Animasi fade-in */
+}
+
+/* Animasi fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Animasi fade-out */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modal.hide {
+  animation: fadeOut 0.5s forwards;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}

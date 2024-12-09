@@ -1,0 +1,187 @@
+body {
+    font-family: 'MyFont', sans-serif;
+    background-color: #3a3a3a;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('../font/Coolvetica Rg.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+    background: #4e4e4e;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    left: 320px;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: normal;
+}
+
+p {
+    color: #ccc;
+    margin-top: 10px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    font-family: 'MyFont';
+    padding: 10px;
+    border: 5px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+input:focus {
+    border-color: #ffee00;
+    outline: none;
+}
+
+.whatsapp-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #fcdc00;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffcb00;
+}
+
+button:active {
+    background-color: #e1c100;
+}
+
+a {
+    color: #fcdc00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+
+/* Responsive for Mobile */
+@media screen and (max-width: 768px) {
+    .back-button {
+        font-size: 16px;
+    }
+}
+
+.whatsapp-input {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Adds space between the span and input */
+}
+
+.whatsapp-input span {
+    background-color: #333; /* Dark background for contrast */
+    color: #fff; /* White text for readability */
+    padding: 5px 10px; /* Padding for a button-like appearance */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Text size */
+    font-weight: bold; /* Makes it stand out */
+    display: inline-block;
+    text-align: center;
+}
+
+.whatsapp-input input {
+    flex: 1; /* Ensures the input takes up the remaining space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.whatsapp-input input:focus {
+    border-color: #ffee00; /* Highlight border on focus */
+}
+
+/* Alert Styling */
+.alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #4caf50; /* Green for success */
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    z-index: 9999; /* Ensure it appears above all content */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.alert.success {
+    background-color: #4caf50; /* Green background */
+}
+
+.alert.error {
+    background-color: #f44336; /* Red background */
+}

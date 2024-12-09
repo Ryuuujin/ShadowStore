@@ -1,0 +1,225 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background-color: #0A0F27;
+}
+header .logo img {
+    height: 80px;
+    border-radius: 25px;
+}
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+header nav ul li {
+    margin: 0 10px;
+}
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.banner img {
+    width: 100%;
+    height: auto;
+}
+.flash-sale .games {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flash-sale .game {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+footer {
+    background-color: #0A0F27;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding: 10px 20px;
+    margin: auto;
+    background-color: #0A0F27;
+    color: white;
+    font-family: Arial, sans-serif;
+    
+}
+
+/* Logo */
+.navbar .logo img {
+    height: 40px;
+    border-radius: 20px;
+}
+
+/* Search bar */
+.navbar .search-bar input {
+    width: 300px;
+    padding: 8px 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #1E2336;
+    color: white;
+    font-size: 14px;
+}
+
+.navbar .search-bar input::placeholder {
+    color: #7A819A;
+}
+
+/* Menu */
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    position: relative;
+}
+
+.navbar .menu a:hover {
+    color: #4DA6FF;
+}
+
+/* Language selector */
+.navbar .language {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.navbar .language .flag img {
+    width: 20px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.navbar .language span {
+    font-size: 14px;
+    color: white;
+}
+
+/* Auth links */
+.navbar .auth a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.navbar .auth a.login {
+    border: 1px solid #4DA6FF;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.navbar .auth a.register {
+    color: #4DA6FF;
+}
+
+.navbar .auth a:hover {
+    color: #4DA6FF;
+    background-color: #1E2336;
+    border-color: #4DA6FF;
+}
+
+/* Container for menu and auth */
+.menu-auth-container {
+    position: absolute;
+    top: 50px; /* Geser ke bawah */
+    right: 20px; /* Geser ke kiri */
+}
+
+
+
+/* Menu links */
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: #1E2336;
+    color: #4DA6FF;
+}
+
+/* Auth buttons */
+.auth a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Login button */
+.auth a.login {
+    border: 1px solid #4DA6FF;
+}
+
+.auth a.login:hover {
+    background-color: #1E2336;
+    color: #4DA6FF;
+}
+
+/* Register button */
+.auth a.register {
+    color: #4DA6FF;
+}
+
+.auth a.register:hover {
+    background-color: #1E2336;
+}
+
+.image{
+    position:relative;
+    height:500px;
+    width:500px;
+    margin:50px auto;
+    background: url('http://lorempixel.com/output/people-q-c-640-480-8.jpg');
+    background-size:cover;
+    -moz-box-shadow: inset 0px 850px 500px -500px #fff;
+    -webkit-box-shadow: inset 0px 850px 500px -500px #fff;
+    -o-box-shadow: inset 0px 850px 500px -500px #fff;
+    box-shadow: inset 0px 850px 500px -500px #fff;
+}
+.image:before,.image:after{
+    content:'';
+    position:absolute;
+    left:5%;
+    opacity:0.5;
+}
+.image:before{
+    top:0;
+    width:20%;
+    height:100%;
+    -moz-box-shadow: inset 0px 850px 500px -500px #000;
+    -webkit-box-shadow: inset 0px 850px 500px -500px #000;
+    -o-box-shadow: inset 0px 850px 500px -500px #000;
+    box-shadow: inset 0px 850px 500px -500px #000;
+}
+.image:after{
+    width:20%;
+    height:10%;
+    top:100%;
+    background:#000;
+}
